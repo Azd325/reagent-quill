@@ -4,9 +4,15 @@ var webpack = require('webpack');
 var prod = process.env.NODE_ENV === "production";
 
 module.exports = {
-    entry: './lib/modules.js',
+    entry: './lib/bundle.js',
+    externals: [{
+      /* Rely on React components imported by Reagent */
+      "react": "var React",
+      "react-dom": "var ReactDOM",
+      "react-dom/server": "var ReactDOMServer"
+    }],
     output: {
-        path: "./target/webpack/",
+        path: "./vendor/",
         filename: prod ? 'bundle.min.js' : 'bundle.js'
     },
     module: {

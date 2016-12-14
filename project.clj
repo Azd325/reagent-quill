@@ -1,56 +1,44 @@
-(defproject reagent-quill "0.1.0-SNAPSHOT"
+(defproject co.zensight/reagent-quill "0.1.0-SNAPSHOT"
   :description "Reagent wrapper around react-quill"
-  :url "https://github.com/Zensight/reagent-quill.git"
-  :license {:name "Eclipse Public License"
-            :url "http://www.eclipse.org/legal/epl-v10.html"}
 
-  :dependencies [[org.clojure/clojure "1.8.0" :scope "provided"]
-                 [org.clojure/clojurescript "1.9.229" :scope "provided"]
-                 [clj-time "0.11.0"]
-                 [joda-time "2.8.2"]
+  :url "https://github.com/Zensight/reagent-quill.git"
+
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [org.clojure/clojurescript "1.9.293"]
+                 [org.clojure/core.async "0.2.395"]
                  [reagent "0.6.0"]]
 
-  :plugins [[lein-cljsbuild "1.1.3"]
-            [lein-figwheel "0.5.4-5"]]
+  :plugins [[lein-cljsbuild "1.1.4"
+             :exclusions [org.clojure/clojure]]
+            [lein-figwheel "0.5.4-7"]]
 
-  :min-lein-version "2.5.0"
+  :source-paths ["src"]
 
-  :clean-targets ^{:protect false}
-  [:target-path
-   [:cljsbuild :builds :app :compiler :output-dir]
-   [:cljsbuild :builds :app :compiler :output-to]]
-
-  :resource-paths ["public"]
-
-  :figwheel {:http-server-root "public"
-             :nrepl-port 7002
-             :nrepl-middleware ["cemerick.piggieback/wrap-cljs-repl"]
-             :server-port 3450
-             :css-dirs ["public/css"]}
+  :figwheel {:server-port 3450
+             :css-dirs ["resources/public/css"]}
 
   :cljsbuild {:builds {:app
                        {:source-paths ["src" "env/dev/cljs"]
-                        :compiler
-                        {:main "reagent-quill.dev"
-                         :output-to "public/js/app.js"
-                         :output-dir "public/js/out"
-                         :asset-path   "js/out"
-                         :source-map true
-                         :optimizations :none
-                         :pretty-print  true}}
+                        :figwheel true
+                        :compiler {:main "reagent-quill.dev"
+                                   :asset-path   "js/out"
+                                   :output-to "resources/public/js/app.js"
+                                   :output-dir "resources/public/js/out"
+                                   :source-map true
+                                   :optimizations :none
+                                   :pretty-print  true
+                                   :foreign-libs [{:file "vendor/bundle.js"
+                                                   :file-min "vendor/bundle.min.js"
+                                                   :provides ["react-quill"]}]
+                                   }}
                        :release
                        {:source-paths ["src" "env/prod/cljs"]
                         :compiler
-                        {:output-to "public/js/app.js"
-                         :output-dir "public/js/release"
+                        {:output-to "dist/reagent-quill.js"
+                         :output-dir "dist/"
                          :asset-path   "js/out"
+                         :foreign-libs [{:file "vendor/bundle.js"
+                                         :file-min "vendor/bundle.min.js"
+                                         :provides ["react-quill"]}]
                          :optimizations :advanced
-                         :pretty-print false}}}}
-
-  :aliases {"release" ["do" "clean" ["cljsbuild" "once" "release"]]}
-
-  :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.4-5"]
-                                  [org.clojure/tools.nrepl "0.2.12"]
-                                  [clj-time "0.11.0"]
-                                  [joda-time "2.8.2"]
-                                  [com.cemerick/piggieback "0.2.2-SNAPSHOT"]]}})
+                         :pretty-print false}}}})
