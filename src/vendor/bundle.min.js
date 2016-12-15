@@ -44,14 +44,9 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	(function() {
-	  if (!goog.isProvided_("react_quill")) {
-	    goog.provide("react_quill");
-	    var reactQuill = goog.getObjectByName("react_quill");
-	    reactQuill.component = __webpack_require__(1);
-	  }
-	}());
+	/* WEBPACK VAR INJECTION */(function(global) {global.ReactQuill = __webpack_require__(1);
 
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 1 */

@@ -1,5 +1,5 @@
 (ns reagent-quill.core
     (:require [reagent.core :as reagent]
-              [react-quill :as react-quill]))
+              [co.zensight.react-quill]))
 
-(def quill-component (reagent/adapt-react-class react-quill.component))
+(def quill-component (reagent/adapt-react-class js/ReactQuill))

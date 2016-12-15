@@ -12,7 +12,7 @@ module.exports = {
       "react-dom/server": "var ReactDOMServer"
     }],
     output: {
-        path: "./vendor/",
+        path: "./src/vendor/",
         filename: prod ? 'bundle.min.js' : 'bundle.js'
     },
     module: {
