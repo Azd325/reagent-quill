@@ -1,4 +1,4 @@
-(defproject co.zensight/reagent-quill "0.1.1"
+(defproject co.zensight/reagent-quill "0.1.2-SNAPSHOT"
   :description "Reagent wrapper around react-quill"
 
   :url "https://github.com/Zensight/reagent-quill.git"
