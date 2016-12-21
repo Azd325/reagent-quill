@@ -5,7 +5,6 @@
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.293"]
-                 [org.clojure/core.async "0.2.395"]
                  [cljsjs/react "15.2.1-0"]
                  [cljsjs/react-dom "15.2.1-0"]
                  [cljsjs/react-dom-server "15.2.1-0"]
