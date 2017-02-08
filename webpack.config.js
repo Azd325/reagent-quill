@@ -18,7 +18,8 @@ module.exports = {
   module: {
     loaders: [
       { test: /.jsx?$/, loader: 'babel-loader', include: "./lib" }
-    ]
+    ],
+    noParse: /quill\/dist/
   },
   plugins: [
     new webpack.DefinePlugin(
