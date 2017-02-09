@@ -10899,6 +10899,10 @@
 		componentWillUnmount: function() {
 			// NOTE: Don't set the state to null here
 			//       as it would generate a loop.
+
+			// If a Quill generated a toolbar, remove it.
+			var toolbar = this.refs.quill.querySelector(".ql-toolbar");
+			if (toolbar) { this.refs.quill.removeChild(toolbar); }
 		},
 
 		shouldComponentUpdate: function(nextProps, nextState) {
@@ -10979,7 +10983,8 @@
 				className: ['quill'].concat(this.props.className).join(' '),
 				onKeyPress: this.props.onKeyPress,
 				onKeyDown: this.props.onKeyDown,
-				onKeyUp: this.props.onKeyUp },
+				onKeyUp: this.props.onKeyUp,
+				ref: 'quill'},
 				this.renderContents()
 			);
 		},
