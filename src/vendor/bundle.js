@@ -63,9 +63,9 @@
 	Quill.register(new QuillStyle('size', 'font-size', styleOptions), true);
 	Quill.register(new QuillStyle('font', 'font-family', styleOptions), true);
 
-	module.exports.Quill = Quill;
 	module.exports = __webpack_require__(3);
 	module.exports.Mixin = __webpack_require__(6);
+	module.exports.Quill = Quill;
 	module.exports.Toolbar = __webpack_require__(138);
 
 
