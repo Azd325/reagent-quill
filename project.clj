@@ -1,7 +1,7 @@
-(defproject co.zensight/reagent-quill "1.0.0-SNAPSHOT"
+(defproject azd325/reagent-quill "1.0.0-SNAPSHOT"
   :description "Reagent wrapper around react-quill"
 
-  :url "https://github.com/Zensight/reagent-quill.git"
+  :url "https://github.com/Azd325/reagent-quil.git"
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.293"]
