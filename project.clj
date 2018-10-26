@@ -3,12 +3,12 @@
 
   :url "https://github.com/machtfit/reagent-quill.git"
 
-  :dependencies [[org.clojure/clojure "1.8.0" :scope "provided"]
-                 [org.clojure/clojurescript "1.9.293" :scope "provided"]
-                 [cljsjs/react "15.2.1-0" :scope "provided"]
-                 [cljsjs/react-dom "15.2.1-0" :scope "provided"]
-                 [cljsjs/react-dom-server "15.2.1-0" :scope "provided"]
-                 [reagent "0.6.0" :scope "provided"]]
+  :dependencies [[org.clojure/clojure "1.9.0" :scope "provided"]
+                 [org.clojure/clojurescript "1.10.339" :scope "provided"]
+                 [cljsjs/react "16.6.0-0" :scope "provided"]
+                 [cljsjs/react-dom "16.6.0-0" :scope "provided"]
+                 [cljsjs/react-dom-server "16.6.0-0" :scope "provided"]
+                 [reagent "0.8.1" :scope "provided"]]
 
   :plugins [[lein-cljsbuild "1.1.4"
              :exclusions [org.clojure/clojure]]
