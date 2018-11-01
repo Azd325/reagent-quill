@@ -19,30 +19,30 @@
   :source-paths ["src"]
 
   :figwheel {:server-port 3450
-             :css-dirs ["resources/public/css"]}
+             :css-dirs    ["resources/public/css"]}
 
   :cljsbuild {:builds {:app
                        {:source-paths ["src" "env/dev/cljs"]
-                        :figwheel true
-                        :compiler {:main "reagent-quill.dev"
-                                   :asset-path   "js/out"
-                                   :output-to "resources/public/js/app.js"
-                                   :output-dir "resources/public/js/out"
-                                   :source-map true
-                                   :optimizations :none
-                                   :pretty-print  true
-                                   :foreign-libs [{:file "src/vendor/bundle.js"
-                                                   :file-min "src/vendor/bundle.min.js"
-                                                   :provides ["react-quill"]}]
-                                   }}
+                        :figwheel     true
+                        :compiler     {:main          "reagent-quill.dev"
+                                       :asset-path    "js/out"
+                                       :output-to     "resources/public/js/app.js"
+                                       :output-dir    "resources/public/js/out"
+                                       :source-map    true
+                                       :optimizations :none
+                                       :pretty-print  true
+                                       :foreign-libs  [{:file     "src/vendor/bundle.js"
+                                                        :file-min "src/vendor/bundle.min.js"
+                                                        :provides ["react-quill"]}]
+                                       }}
                        :release
                        {:source-paths ["src" "env/prod/cljs"]
                         :compiler
-                        {:output-to "dist/reagent-quill.js"
-                         :output-dir "dist/"
-                         :asset-path   "js/out"
-                         :foreign-libs [{:file "src/vendor/bundle.js"
-                                         :file-min "src/vendor/bundle.min.js"
-                                         :provides ["react-quill"]}]
+                        {:output-to     "dist/reagent-quill.js"
+                         :output-dir    "dist/"
+                         :asset-path    "js/out"
+                         :foreign-libs  [{:file     "src/vendor/bundle.js"
+                                          :file-min "src/vendor/bundle.min.js"
+                                          :provides ["react-quill"]}]
                          :optimizations :advanced
-                         :pretty-print false}}}})
+                         :pretty-print  false}}}})
