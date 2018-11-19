@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "react-quill": "git://github.com/Zensight/react-quill"
+    "react-quill": "^1.3.2"
   },
   "scripts": {
     "bundle": "bin/webpack && NODE_ENV=production bin/webpack -p"
